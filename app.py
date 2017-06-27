@@ -38,7 +38,7 @@ CheckMate.run_checkmate(local_directory + qif_file, local_directory + dmis_outpu
 # upload report to s3 bucket and write location to out.txt
 final_name = filemanagement.upload_report(dmis_output)
 
-outputs = "\noutputFile="+final_name
+outputs = "outputFile="+final_name
 outputs += "\noutputTemplate=<div class=\"project-run-services padding-10\" ng-if=\"!runHistory\" layout=\"column\">          <style>            #custom-dome-UI {             margin-top: -30px;           }          </style>            <div id=\"custom-dome-UI\">             <div layout=\"row\" layout-wrap style=\"padding: 0px 30px\">               <h2>Report Created Successfully:</h2>               <p><a href=\"{{outputFile}}\">{{outputFile}}</a></p>             </div>           </div>        </div>   <script> </script>"
 
 target = open("out.txt", 'w')
