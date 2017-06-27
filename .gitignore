@@ -2,3 +2,6 @@ credentials.json
 in.txt
 out.txt
 *.pyc
+*.prt
+*.qif
+*.dmi
