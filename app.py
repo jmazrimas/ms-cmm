@@ -19,13 +19,29 @@ with open('in.txt') as f:
 import filemanagement
 filemanagement.download_data(inputs["inputFile"], "input.prt")
 
+creo_input = r"input.prt"
+qif_file = r"input.qif"
+dmis_output = r"output.dmi"
+
 # call MBDVidia and CheckMate to generate output data
-MBDVidia.run_mbdvidia("input.prt", "input.qif")
-CheckMate.run_checkmate("input.qif", "output.dmi")
+
+# Launch MBDVidia with this input file
+print("Generating QIF model from Creo with MBDVidia", flush=True)
+# MBDVidia.run_mbdvidia(creo_input, qif_file)
+
+# Launch CheckMate with the results from MBDVidia
+print("Generating DMIS program from QIF with CheckMate", flush=True)
+# CheckMate.run_checkmate(qif_file, dmis_output)
+
+# mock output temporarily
+target = open("output.dmi", 'w')
+target.write("testdata")
+target.close
+
 dmis_output = "./output.dmi"
 
 # upload report to s3 bucket and write location to out.txt
-final_name = upload_report(dmis_output)
+final_name = filemanagement.upload_report(dmis_output)
 
 outputs = "\noutputFile="+final_name
 outputs += "\noutputTemplate=<div class=\"project-run-services padding-10\" ng-if=\"!runHistory\" layout=\"column\">          <style>            #custom-dome-UI {             margin-top: -30px;           }          </style>            <div id=\"custom-dome-UI\">             <div layout=\"row\" layout-wrap style=\"padding: 0px 30px\">               <h2>Report Created Successfully:</h2>               <p><a href=\"{{outputFile}}\">{{outputFile}}</a></p>             </div>           </div>        </div>   <script> </script>"

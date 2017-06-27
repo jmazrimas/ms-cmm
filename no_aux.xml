@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Options name="3DTransVidiaUI" Version="3.6">
+	<OptionsSet name="TranslationOptions">
+		<opt name="RecordGeneralLog" val="0" label="Recording general log" description="Recording general log" type="bool"/>
+		<opt name="RecordJournal" val="0" label="Recording journal" description="Recording journal" type="bool"/>
+		<opt name="ReadUnit" val="10" values="inch|mm|ft|mi|m|km|mil|um|cm|uin|Use Authority File Units" label="Units" description="Units" type="enum"/>
+		<opt name="WriteUnit" val="10" values="inch|mm|ft|mi|m|km|mil|um|cm|uin|Use Authority File Units" label="Write Units" description="Write Units" type="enum"/>
+		<opt name="GDTStandard" val="0" values="ASME|ISO" label="GD&amp;T Standard" description="GD&amp;T standard" type="enum"/>
+		<opt name="ReadTolerance" val="0.001" type="d1" deg="1" label="Model Tolerance" description="Model Tolerance"/>
+		<opt name="ReadUseTolerance" val="3" values="Request on Load|Default|File|Estimated" label="Tolerance" description="Model tolerance" type="enum"/>
+		<opt name="ReadSew" val="0" label="Try Forming Solid(s)" description="Try forming solids" type="bool"/>
+		<opt name="ReadRestoreNormals" val="0" label="Conform Normals" description="Make orientations of faces consistent - all face normals are facing inwards or out relative to the common shell" type="bool"/>
+		<opt name="ReadVerticesAsCoP" val="2" values="Always|Never|More than 'N' Vertices" label="Load Aux Vertices as Point Cloud" description="Load all auxiliary vertices as one point cloud" type="enum"/>
+		<opt name="NBordReadVerticesAsCoP" val="10" label="Number of Vertices" description="    The minimum number of auxiliary vertices to be loaded as point cloud" type="i1"/>
+		<opt name="ReadHiddenUI" val="3" values="No|Annotations Only|All|Request on Load" label="Load Hidden Objects" description="Load hidden model objects" type="enum"/>
+		<opt name="ReadSolids" val="1" label="Solid Bodies" description="Translate manifold solid B-Rep object data" type="bool"/>
+		<opt name="ReadSheets" val="1" label="Sheet Bodies" description="Translate sheet body data" type="bool"/>
+		<opt name="ReadAttributes" val="1" label="Load Attributes" description="Load attributes" type="bool"/>
+		<opt name="ReadWCS" val="0" label="Load Working Coordinate Systems" description="Load working coordinate system" type="bool"/>
+		<opt name="ReadAuxiliaryUI" val="0" values="No|Yes|Request on Load" label="Load Auxiliary Geometry" description="Load geometrical objects that do not participate in forming model bodies" type="enum"/>
+		<opt name="ReadRefSrf" val="0" label="Load Auxiliary Surfaces" description="    Load surfaces that do not participate in forming model bodies" type="bool"/>
+		<opt name="ReadRefCrv" val="0" label="Load Auxiliary Curves" description="    Load curves that do not participate in forming model bodies" type="bool"/>
+		<opt name="ReadRefPt" val="0" label="
+Load Auxiliary Points" description="    Load points that do not participate in forming model bodies" type="bool"/>
+		<opt name="ReadAuxPMI" val="0" label="Load Auxiliary Annotations" description="    Load auxiliary annotations and driving dimensions" type="bool"/>
+		<opt name="ReadSuppressed" val="0" label="Load Suppressed Entities" description="Load suppressed assembly components" type="bool"/>
+		<opt name="ReadConfigurations" val="0" values="Active|Request on Load" label="Configuration" description="Configuration to use" type="enum"/>
+		<opt name="ReadFilters" val="0" values="All|Request on Load" label="Layers and Filters" description="Layers and filters to use" type="enum"/>
+		<opt name="ReadShowAllPMIDlg" val="2" values="No|Yes|Request on Load" label="Load All Annotations as Visible" description="Make all loading annotations visible regardless of their visibility flags" type="enum"/>
+		<opt name="ReadShowAllPMI" val="0" label="Load All Annotations as Visible Default" description="Load All Annotations as Visible Default" type="bool"/>
+		<opt name="ReadZeroDimension" val="1" label="Load Zero Dimensions" description="Load 'zero' dimensions" type="bool"/>
+		<opt name="ReadErrorLevel" val="0" values="Main Messages|Fatal Errors|Warnings|Correction|All Messages" label="Error Level" description="Specifies error types to be logged" type="enum"/>
+		<opt name="ReadPmiRemoveDuplicated" val="1" label="Remove Duplicate Annotations" description="Remove duplicate annotations" type="bool"/>
+		<opt name="ReadPmiJoinShared" val="0" label="Join Shared Annotations" description="Join annotations linked to different model objects" type="bool"/>
+		<opt name="RepairPmiRemoveUnrecognizedDimension" val="1" label="Remove Unrecognized Dimensions" description="Remove dimensions with nominal values that do not correspond to feature parameters" type="bool"/>
+		<opt name="ReadPmiGroup" val="1" label="Group Annotations" description="Allow grouping of annotations associated with the same model entities" type="bool"/>
+		<opt name="ReadPmiOptimizePosition" val="1" label="Optimize Annotation Position" description="Allow repositioning of annotations" type="bool"/>
+		<opt name="ReadPmiToleranceAlwaysVisible" val="0" label="Tolerance Always Visible" description="Show tolerances of translated dimensions regardless of the original presentation" type="bool"/>
+		<opt name="ReadPmiConvertReferenceDimensionInfo" val="1" label="Convert Prefix and Suffix to the Reference type of Dimension" description="Convert Prefix and Suffix to the Reference type of Dimension" type="bool"/>
+		<opt name="ImprovePmiLinks" val="1" label="Improve annotation links: remove links on inappropriate features, reconnect annotations from auxiliary geometry to the model geometry" description="Improve annotation links: remove links on inappropriate features, reconnect annotations from auxiliary geometry to the model geometry" type="bool"/>
+		<opt name="UseOriginalWitnessLines" val="0" label="Use witness lines from file" description="Use witness lines from file" type="bool"/>
+		<opt name="PmiReplaceEdgeByFace" val="1" label="Reconnect from Edges to Faces" description="Reconnect annotations from the edge features to the face features" type="bool"/>
+		<opt name="ReadModeUI" val="4" type="i1"/>
+		<opt name="ReadPmiRemoveDimPhantom" val="1" values="No|CATIA5|All" label="Ignore Phantom Dimensions" description="Ignore 'phantom' dimensions that are used to build leader lines for datums" type="enum"/>
+		<opt name="ReadPmiMultipleLeaders" val="0" label="Annotations with multiple leaders" description="This option controls use of annotation multiple leaders - separate leaders to every linked model object" type="bool"/>
+		<opt name="AcisHealing" val="0" label="Preliminary Healing" description="Preliminary Healing" type="bool"/>
+		<opt name="ReadAssemblyExtend" val="1" label="Load assembly in extend mode" description="This option controls the translation of the assembly in extend mode" type="bool"/>
+		<opt name="ReadAsmUseEbom" val="0" label="Read assembly use exist ebom" description="Read assembly use exist ebom" type="bool"/>
+		<opt name="ReadAsmRemoveEbom" val="1" label="Read assembly remove ebom" description="Read assembly remove ebom" type="bool"/>
+		<opt name="ReadAsmFastPreview" val="0" label="Read assembly fast preview" description="Read assembly fast preview" type="bool"/>
+		<opt name="ReadManufacturing" val="0" label="Manufacturing Information" description="Manufacturing features such as hole data" type="bool"/>
+		<opt name="ReadParasolidDirect" val="0" label="Read Parasolid Direct" description="Read Parasolid Direct" type="bool"/>
+		<opt name="ReadParasolidCleanModel" val="0" label="Clean Model" description="Remove redundant topological objects." type="bool"/>
+		<opt name="ReadParasolidClubAllSheets" val="0" label="Club All Sheets" description="Group all faces in a single body." type="bool"/>
+		<opt name="ReadSolidWorksDirect" val="1" label="Read SolidWorks Direct" description="Read SolidWorks Direct" type="bool"/>
+		<opt name="ImportParts" val="0" label="Import parts" description="Import parts" type="bool"/>
+		<opt name="StoreSatFile" val="0" label="Store sat file" description="Store sat file" type="bool"/>
+		<opt name="RecordSession" val="0" label="Recording session" description="Recording session" type="bool"/>
+		<opt name="SkipProcessHeader" val="0" label="Skip process header" description="Skip process header" type="bool"/>
+		<opt name="ReadSolidWorksPMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="ReadC4OnlyRoot" val="1" label="Only Root" description="Translate all or only root Catia V4 entities. The entities in a Catia V4 file are managed in the form of hierarchy. From this hierarchy, the Catia V4 Reader determines a set of entities classified as root entities. Set this option to Yes to enable reading of root entities only. Set this option to No to enable reading of all entities for translation." type="bool"/>
+		<opt name="ReadC4OnlyMasterWorkspace" val="1" label="Only Master Workspace" description="Translate workspaces from a Catia V4 file" type="bool"/>
+		<opt name="ReadC4DittoBodies" val="1" label="Ditto Bodies" description="Translate space-ditto entities from Catia V4" type="bool"/>
+		<opt name="ReadC4KeepAnalyticalSrf" val="1" label="Keep Analytical Surface Definition" description="Use analytic surface definition stored in a Catia V4" type="bool"/>
+		<opt name="ReadC4NoPics" val="0" label="No Picks" description="Obsolete" type="bool"/>
+		<opt name="ReadC4ExpAsSingleBlock" val="0" label="Load *.exp as Single Block" description="Load *.exp as a single block" type="bool"/>
+		<opt name="ReadC4ExpExtractWithoutTranslation" val="0" label="Extract Catia V4 *.model from *.exp" description="Extract and store Catia V4 model files" type="bool"/>
+		<opt name="ReadC4AsAssembly" val="1" label="Load as Assembly" description="Load as an assembly" type="bool"/>
+		<opt name="ReadC43DCurvePref" val="0" label="3D Curve Preffered" description="This option sets the preference to be used when generating trimmed curves for a surface. The preference can be 2D or 3D. Set this option to true to set the preference to 3D curves when generating trimmed curves for a surface. If you set this option to false, 2D curves are used." type="bool"/>
+		<opt name="ReadC43DCurveRegen" val="0" label="3D Curve Regenerated" description="This option controls the regeneration of 3D curves. At times, a Catia model file may contain both 2D curves and 3D curves. If you set this option to true, 3D curves from the Catia V4 file are used for translation. If you set this option to false, 3D curves from the Catia V4 model file are not used for translation and the 3D curves are generated using the surface and 2D curve information." type="bool"/>
+		<opt name="ReadC5PMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="ReadC5InWorkObject" val="0" label="Load &quot;In Work Object&quot;" description="Translate geometry from &quot;In Work Object&quot; state and not from the final state" type="bool"/>
+		<opt name="ReadC5AssmAsBlock" val="0" label="Assembly as Single Block" description="Assembly as Single Block" type="bool"/>
+		<opt name="ReadC5Preview" val="0" label="Preview" description="Generate preview" type="bool"/>
+		<opt name="ReadC5RevolveSrfAsNURBS" val="0" label="Revolved Surfaces as NURBS" description="This option sets whether to translate revolved surfaces from Catia V5 files as NURBS (Non-Uniform Rational B-spline Surfaces)" type="bool"/>
+		<opt name="ReadC5ImportEdgeAttr" val="0" label="Read edge attributes" description="Reading of edge level attributes from Catia V5 might take long time. This option indicates whether to read the edge attributes from Catia V5 file. Set this option to true to read edge attributes from Catia V5 file. If this option is set to false, the edge attributes from Catia V5 file are not read for translation." type="bool"/>
+		<opt name="ReadC5DiamAsLinear" val="0" label="Represent diameter dimension as linear" description="This option specifies the way of representation for diameter dimensions. If this option is true then diameter dimensions will be represented as linear dimensions." type="bool"/>
+		<opt name="ReadSATPMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="ReadUGPMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="ReadUGVisibleLayerOnly" val="1" label="Visible Layers Only" description="Specifies whether only visible  or all layers shall be imported.This option is not supported for assemblies." type="bool"/>
+		<opt name="ReadUGNonBlankedParts" val="1" label="Non-Blanked Parts" description="Import non-blanked parts" type="bool"/>
+		<opt name="ReadUGAddMultBodiesInSamePart" val="1" label="Multi-Body to One Part" description="Specifies whether a multi-body model shall be imported as a single part or separate parts. If you set this option to true, a multi-body model will be translated to a single part, otherwise to separate parts." type="bool"/>
+		<opt name="ReadUGLayers" val="" label="Read layers" description="Read layers" type="vectori1"/>
+		<opt name="ReadUGDirect" val="0" label="Read NX Direct" description="Read NX Direct" type="bool"/>
+		<opt name="ReadProEPMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="ReadProAsmFlat" val="0" label="Read Creo assembly as flat structure" description="Read Creo assembly as flat structure" type="bool"/>
+		<opt name="ReadInventorAllStates" val="0" label="All States" description="Translate unfolded sheet bodies. If this option is set to No, only the folded bodies are translated. If this option is set to Yes, both the folded and unfolded bodies are translated." type="bool"/>
+		<opt name="ReadInventorAssmAsBlock" val="0" label="Assembly as Single Block" description="Assembly as Single Block" type="bool"/>
+		<opt name="UseStepInternalTranslator" val="1" label="Use Internal STEP Translator" description="Use internal STEP translator (strongly recommended)" type="bool"/>
+		<opt name="ReadSTEPPMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="UseIgesInternalTranslator" val="1" label="Use Internal IGES Translator" description="Use internal IGES translator (strongly recommended)" type="bool"/>
+		<opt name="ReadIGESPMI" val="1" label="PMI" description="Product Manufacturing Information (geometric dimensions and tolerances, 3D notes and dimensions, surface finish, and material specifications...)" type="bool"/>
+		<opt name="ReadAcrossBorderIges" val="0" label="Allow Surface Boundary Crossing" description="Allow trim contours to cross surface boundaries (it violates IGES format)" type="bool"/>
+		<opt name="WriteSetOfFace" val="0" label="Write Solid as Set of Faces" description="Ignore solid topology wrapper data" type="bool"/>
+		<opt name="KeepSourceFormat" val="1" values="Source Format|MBDVidia Native Format" label="Save command (Ctrl+S)" description="Keep source format when the Save command (Ctrl+S) is being performed. If the corresponding translator is not activated (no license) file will be saved in the native Capvidia XML format." type="enum"/>
+		<opt name="FileVersioning" val="1" label="Version Control" description="    Control format version" type="bool"/>
+		<opt name="FileVersioningFolder" val="" type="path" label="Custom Folder" description="        Custom folder for saving files"/>
+		<opt name="FolderMode" val="0" values="Source|Temporary|Custom" label="Save Folder" description="    Folder to save" type="enum"/>
+		<opt name="WriteMergedMeshes" val="0" label="Write merged meshes" description="Write merged meshes" type="bool"/>
+		<opt name="WriteModeUI" val="-1" type="i1"/>
+		<opt name="WriteApplyTransformation" val="1" label="Apply transformation" description="Apply transformation" type="bool"/>
+		<opt name="AutoSaveModel" val="0" label="Auto Save" description="Enable auto save" type="bool"/>
+		<opt name="AutoSaveTimeInterval" val="15" label="Time Interval" description="Save after specified time (in minutes) is passed" type="i1"/>
+		<opt name="AutoSaveOpInterval" val="5" label="Operation Interval" description="Save after specified number of operation are performed" type="i1"/>
+		<opt name="Write2DCurves" val="1" label="Write 2D curves" description="Write 2D curves" type="bool"/>
+		<opt name="WriteMakeG1" val="0" label="Make scene G1" description="Make scene G1" type="i1"/>
+		<opt name="WriteC4SolidAsSolide" val="1" label="Solids as 'SOLIDE'" description="This option controls the translation of multi-shell solids from the target as SOLIDE or VOLUMEs in Catia V4. If you set this option to Yes, a multi-shell solid is written as a single SOLIDE having many SOLIDDEF. Set this option to No to translate multi-shell solids from the target as multiple VOLUMEs in Catia V4." type="bool"/>
+		<opt name="WriteC43DCurves" val="1" label="3D Curves" description="Specifies whether 3D representation of trimming edges shall be written (optional for Catia V4 format)" type="bool"/>
+		<opt name="WriteC4ModelDimension" val="10000" type="d1" deg="0" label="Model Dimension" description="This option sets the model dimension field in a Catia V4 model file. The unit for specifying the model dimension field is millimeter."/>
+		<opt name="WriteC4MajorVersion" val="4" label="Major Version" description="Major Catia V4 version" readOnly="1" type="i1"/>
+		<opt name="WriteC4MinorVersion" val="0" values="19|20|21|22|23|24" label="Minor Version" description="Minor Catia V4 version" type="enum"/>
+		<opt name="WriteC4Author" val="" type="string" label="Author" description="Author name to write in Catia V4 file"/>
+		<opt name="WriteC4Modelname" val="" type="string" label="Model Name" description="Model name to write in Catia V4 file"/>
+		<opt name="WriteC4KeepAnalyticalSrf" val="1" label="Keep Analytical Surface Definition" description="Keep Analytical Surface Definition" type="bool"/>
+		<opt name="WriteC5Version" val="0" values="CATIAV5R15|CATIAV5R16|CATIAV5R17|CATIAV5R18|CATIAV5R19|CATIAV5R20|CATIAV5R21|CATIAV5R22|CATIAV5R23|CATIAV5R24" label="Version" description="Catia V5 version to write" type="enum"/>
+		<opt name="WriteAsmCreateFolder" val="1" label="Assembly in Separate Folder" description="Write assembly files in a new sub-folder" type="bool"/>
+		<opt name="WriteAsmInOneFile" val="0" label="Assembly in One File" description="Save all assembly components in one file (producing a multi-body model)" type="bool"/>
+		<opt name="WriteC5AsmType" val="0" values="Aggregate|Atomic" label="Write Assembly Type" description="Setting this option to Aggregate creates sub-assemblies as Catia V5 components in the resultant file without any CATProduct files associated with them." type="enum"/>
+		<opt name="WriteParasolidVersion" val="130" label="Version" description="File format version" type="i1"/>
+		<opt name="WriteParasolidClean" val="1" label="Clean" description="Remove redundant topological objects" type="bool"/>
+		<opt name="WriteParasolidFaceId" val="0" label="Keep Face ID" description="Write original face IDs in attributes" type="bool"/>
+		<opt name="WriteParasolidMode" val="0" label="Mode" description="Mode" type="i1"/>
+		<opt name="WriteAcisVersion" val="27" label="Version" description="File format version" type="i1"/>
+		<opt name="WriteStepPMIRepresentation" val="3" values="203/214|203/214 with Annotations as 3D Edges|203/214 with Annotations as Presentation Only|242" label="Application Protocol" description="The STEP Application Protocols (AP)" type="enum"/>
+		<opt name="WriteStepPMIPresentation" val="0" values="Polyline|Tessellated|Character-based" label="Annotation Presentation Method" description="    Annotation presentation method ('polyline' is recommended)" type="enum"/>
+		<opt name="WriteStepP21" val="1" label="Write String in P21 Format" description="This option controls format of string data in step file" type="bool"/>
+		<opt name="MapIdFile" val="" type="string" label="Write file map id" description="Write file map id"/>
+		<opt name="WriteExportType" val="0" values="Standard|Autoform|SolidWorks|FEMAP|SolidDesigner|Catia 4|Custom" label="IGES Flavor" description="IGES format flavor" type="enum"/>
+		<opt name="WriteGeometryType" val="0" values="Standard IGES 6.0|NURBS|B-Spline" label="Geometry" description="Geometry" type="enum"/>
+		<opt name="WriteTrimCurve" val="2" values="Parametric|Model|All" label="Trimming Curves" description="Trimming Curves" type="enum"/>
+		<opt name="WriteSplit23Nurbs" val="0" label="Split NURBS Surfaces by Outer Loop" description="Split NURBS Surfaces by Outer Loop" type="bool"/>
+		<opt name="WriteSplit13Nurbs" val="0" label="Split NURBS Curves by Bound Parameters" description="Split NURBS Curves by Bound Parameters" type="bool"/>
+		<opt name="WriteIgnoreOuterLoop" val="0" label="Ignore Outer Loop Coincident with Surface Bounds" description="Ignore Outer Loop Coincident with Surface Bounds" type="bool"/>
+		<opt name="WriteTransfNurbs" val="0" label="Apply Transformation to NURBS" description="Apply Transformation to NURBS" type="bool"/>
+		<opt name="Write1XNurbsNotClosed" val="1" label="Ignore Close-Attribute of NURBS Curve" description="Ignore Close-Attribute of NURBS Curve" type="bool"/>
+		<opt name="Write23CylTabToNurbs" val="0" label="Map Tabulated Cylinder to NURBS" description="Map Tabulated Cylinder to NURBS" type="bool"/>
+		<opt name="Write23OffsetToNurbs" val="0" label="Map Offset Surface to NURBS" description="Map Offset Surface to NURBS" type="bool"/>
+		<opt name="Write1XSegpToNurbs" val="0" label="Map Polyline to NURBS" description="Map Polyline to NURBS" type="bool"/>
+		<opt name="WriteMode" val="0" values="Trimmed Surface|B-Rep" label="Topology" description="Topology" type="enum"/>
+		<opt name="WriteCRSybmol" val="1" values="CRLF (MS-DOS/Windows)|LF (Unix)|CR (Mac OS)" label="EOL" description="End of line" type="enum"/>
+		<opt name="WriteStlFormat" val="0" values="ASCII|Binary" label="Format" description="Format" type="enum"/>
+		<opt name="WriteSeparateAssembly" val="0" label="Assembly as Separated Parts" description="Split assembly and write as separated parts" type="bool"/>
+		<opt name="WriteVrmlForVMBuilder" val="0" label="Additional Information" description="Write additional information (WCS, source file name)" type="bool"/>
+		<opt name="WriteQIFasMesh" val="0" label="Convert parametric to mesh" description="Convert parametric faces to mesh faces" type="bool"/>
+		<opt name="WriteDelimiterAf" val="0" values="Space|Comma|Semicolon" label="Delimiter" description="Specifies a delimiter for writing" type="enum"/>
+		<opt name="WriteDelimiterAsc" val="0" values="Space|Comma|Semicolon" label="Delimiter" description="Specifies a delimiter for writing" type="enum"/>
+		<opt name="WriteDelimiterXyz" val="0" values="Space|Comma|Semicolon" label="Delimiter" description="Specifies a delimiter for writing" type="enum"/>
+		<opt name="WriteModePly" val="0" values="Text|Binary Big Endian|Binary Little Endian" label="Mode" description="This option specifies a mode of writing." type="enum"/>
+		<opt name="ReadHidden" val="0" values="No|Annotations Only|All" label="Load Hidden Entities Base" description="Load Hidden Entities Base" type="enum"/>
+	</OptionsSet>
+</Options>
