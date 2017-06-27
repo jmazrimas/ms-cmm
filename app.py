@@ -3,6 +3,9 @@ import os
 import MBDVidia
 import CheckMate
 
+local_directory = os.getcwd()
+local_directory = local_directory + "\\"
+
 # parse input params and put in object called 'inputs'
 with open('in.txt') as f:
     lines = f.readlines()
@@ -26,19 +29,27 @@ dmis_output = r"output.dmi"
 # call MBDVidia and CheckMate to generate output data
 
 # Launch MBDVidia with this input file
-print("Generating QIF model from Creo with MBDVidia", flush=True)
+# print("Generating QIF model from Creo with MBDVidia", flush=True)
 # MBDVidia.run_mbdvidia(creo_input, qif_file)
 
 # Launch CheckMate with the results from MBDVidia
-print("Generating DMIS program from QIF with CheckMate", flush=True)
+# print("Generating DMIS program from QIF with CheckMate", flush=True)
 # CheckMate.run_checkmate(qif_file, dmis_output)
 
-# mock output temporarily
-target = open("output.dmi", 'w')
-target.write("testdata")
-target.close
+# Launch MBDVidia with this input file
+print("Generating QIF model from Creo with MBDVidia", flush=True)
+MBDVidia.run_mbdvidia(local_directory + creo_input, local_directory + qif_file)
 
-dmis_output = "./output.dmi"
+# Launch CheckMate with the results from MBDVidia
+print("Generating DMIS program from QIF with CheckMate", flush=True)
+CheckMate.run_checkmate(local_directory + qif_file, local_directory + dmis_output)
+
+# mock output temporarily
+# target = open("output.dmi", 'w')
+# target.write("testdata")
+# target.close
+
+# dmis_output = "./output.dmi"
 
 # upload report to s3 bucket and write location to out.txt
 final_name = filemanagement.upload_report(dmis_output)
