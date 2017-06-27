@@ -3,7 +3,7 @@ import zipfile
 import os
 import json
 
-def download_tdp_data(url, filename):
+def download_data(url, filename):
         urllib.request.urlretrieve(url, filename)
         print("Data Downloaded")
 
