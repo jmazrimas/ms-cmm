@@ -1,9 +1,9 @@
+# import dependencies
 import os
-try:
-    # import dependencies
-    import MBDVidia
-    import CheckMate
+import MBDVidia
+import CheckMate
 
+try:
     local_directory = os.getcwd()
     local_directory = local_directory + "\\"
 
@@ -45,7 +45,7 @@ try:
     target = open("out.txt", 'w')
     target.write(outputs)
     target.close
-
+    
 except:
     outputs = "outputFile=null"
     outputs += "\noutputTemplate=<div class=\"project-run-services padding-10\" ng-if=\"!runHistory\" layout=\"column\">          <style>            #custom-dome-UI {             margin-top: -30px;           }          </style>            <div id=\"custom-dome-UI\">             <div layout=\"row\" layout-wrap style=\"padding: 0px 30px\">               <h2>Error</h2>               <p>There was an error running this application</p>             </div>           </div>        </div>   <script> </script>"
