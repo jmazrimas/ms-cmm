@@ -1,10 +1,10 @@
-import urllib2.request
+import urllib.request
 import zipfile
 import os
 import json
 
 def download_data(url, filename):
-        urllib.urlretrieve(url, filename)
+        urllib.request.urlretrieve(url, filename)
         print("Data Downloaded")
 
 def unzip_directories():
